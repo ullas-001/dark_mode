@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News App - Dark Mode Prototype</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    /* Navbar */
+    header {
+      background: #1976d2;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    /* Toggle Button */
+    .toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .toggle-btn {
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      color: #1976d2;
+    }
+
+    /* News Articles */
+    .container {
+      padding: 15px;
+    }
+
+    .article {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .article h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .article p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* DARK MODE */
+    body.dark {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark header {
+      background: #333;
+      color: #eee;
+    }
+
+    body.dark .toggle-btn {
+      background: #333;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    body.dark .article {
+      background: #1e1e1e;
+      color: #eee;
+    }
+
+    body.dark .article p {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h1>Daily News</h1>
+    <div class="toggle-container">
+      <button class="toggle-btn" onclick="toggleMode()">🌙 Dark</button>
+    </div>
+  </header>
+
+  <!-- Articles -->
+  <div class="container">
+    <div class="article">
+      <h2>Breaking: Market Hits Record High</h2>
+      <p>The stock market reached an all-time high today with major companies reporting positive growth...</p>
+    </div>
+
+    <div class="article">
+      <h2>Sports: Local Team Wins Championship</h2>
+      <p>In an exciting final match, the city’s football team secured the championship title after a nail-biting finish...</p>
+    </div>
+
+    <div class="article">
+      <h2>Technology: New Smartphone Released</h2>
+      <p>The latest smartphone model was unveiled today, featuring cutting-edge technology and improved accessibility...</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.toggle-btn');
+      if (document.body.classList.contains('dark')) {
+        btn.textContent = "☀️ Light";
+      } else {
+        btn.textContent = "🌙 Dark";
+      }
+    }
+  </script>
+
+</body>
+</html>
